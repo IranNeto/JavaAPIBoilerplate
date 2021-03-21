@@ -1,0 +1,36 @@
+version: '3'
+
+networks:
+  develop:
+    driver: bridge
+
+services:
+  example-service:
+    build:
+      context: ./example-service
+      dockerfile: ./docker/Dockerfile
+    image: example-service:0.0.1
+    ports:
+      - "8080:8080"
+      - "8083:8083"
+      - "80:8080"
+    networks:
+      develop:
+        aliases:
+          - java.api.boilerplate.docker.com
+          - example-service
+    depends_on:
+      - sb-admin
+
+  sb-admin:
+    build:
+      context: ./sb-admin
+      dockerfile: ./docker/Dockerfile
+    image: sb-admin:0.0.1
+    ports:
+      - "9999:9999"
+    networks:
+      develop:
+        aliases:
+          - sb.admin.docker.com
+          - sb-admin
