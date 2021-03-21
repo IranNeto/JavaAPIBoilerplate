@@ -1,0 +1,5 @@
+rootProject.name = 'JavaAPIBoilerplate'
+include 'example-client'
+include 'example-core'
+include 'example-service'
+
