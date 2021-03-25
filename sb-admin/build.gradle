@@ -18,9 +18,11 @@ ext {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'de.codecentric:spring-boot-admin-starter-server'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation group: 'de.codecentric', name: 'spring-boot-admin-starter-server', version: '2.1.2'
+	implementation group: 'de.codecentric', name: 'spring-boot-admin-server-ui-login', version: '1.5.7'
+	compileOnly("javax.servlet:javax.servlet-api:3.1.0")
 }
 
 dependencyManagement {

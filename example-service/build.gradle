@@ -24,7 +24,6 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation group: 'de.codecentric', name: 'spring-boot-admin-starter-server', version: '2.1.2'
 	implementation group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version: '2.1.2'
 	implementation(project(":example-core"))
 }
