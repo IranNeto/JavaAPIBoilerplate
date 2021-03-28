@@ -15,6 +15,7 @@ _Feel free to discord or discuss about it_ :)
 
 - Gradle version 6.7
 - 3 modules: Client, Core, Service. Read more on 
+- 1 SB2 Admin server to registre.
 - Spring Boot version 2.2.4 in service module
 - Java 11
 
@@ -39,6 +40,11 @@ is going to use.
 
 Service module contains all the domain and business logic routines as: Controllers, adapters, components
 , repositories, among others.
+
+
+## Registry module (sb-admin)
+
+This module is a spring admin server application to registre other spring clients. *(Implementing)*
 
 ## Changes coming soon
 
