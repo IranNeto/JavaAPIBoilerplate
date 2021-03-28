@@ -1,34 +1,18 @@
+server:
+  port: 8080
+  
 management:
-  endpoint:
-    health:
-      show-details: always
   endpoints:
     web:
       exposure:
         include: '*'
-
+  endpoint:
+    health:
+      show-details: always
 spring:
   boot:
     admin:
       client:
-        url: http://localhost:9990
-        username: admin
-        password: admin
-        instance:
-          metadata:
-            user:
-              name: ${spring.security.user.name}
-              password: ${spring.security.user.password}
-  security:
-    user:
-      name: client
-      password: client
-
-info:
-  app:
-    name: ${project.name}
-    description: ${project.description}
-    version: ${project.version}
-    encoding: ${project.build.sourceEncoding}
-    java:
-      version: ${java.version}
+        url: [http://localhost:9990]
+  application:
+    name: example-service
