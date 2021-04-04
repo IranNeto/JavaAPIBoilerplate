@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-  develop:
+  default:
     driver: bridge
 
 services:
@@ -14,7 +14,7 @@ services:
       - "8080:8080"
       - "8083:8083"
     networks:
-      develop:
+      default:
         aliases:
           - java.api.boilerplate.docker.com
           - example-service
@@ -30,7 +30,7 @@ services:
       - "9990:9990"
       - "9993:9993"
     networks:
-      develop:
+      default:
         aliases:
           - sb.admin.docker.com
           - sb-admin
