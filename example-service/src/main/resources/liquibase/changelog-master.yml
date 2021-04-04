@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/changelogs/v01-create-user-table.yml
+# Add more files repeating this structure
+#  - include:
+#      file: ...
