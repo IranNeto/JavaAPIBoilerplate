@@ -66,6 +66,9 @@ docker-compose build
 docker-compose up example-service
 ```
 
+If everything worked out you should be able to see example-service registered in
+`http://locahost:9990`
+
 ## Changes coming soon
 
 - Endpoints
