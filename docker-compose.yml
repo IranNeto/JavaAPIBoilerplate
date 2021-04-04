@@ -20,6 +20,8 @@ services:
           - example-service
     depends_on:
       - sb-admin
+      - db
+      - pgadmin4
 
   sb-admin:
     build:
@@ -34,3 +36,32 @@ services:
         aliases:
           - sb.admin.docker.com
           - sb-admin
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "freedev"
+    ports:
+      - "15432:5432"
+    volumes:
+      - .mount/db:/var/lib/postgresql/data
+    networks:
+      default:
+        aliases:
+          - db
+          - db.docker.com
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "freedev@freedev.com"
+      PGADMIN_DEFAULT_PASSWORD: "freedev"
+    ports:
+      - "16543:80"
+    depends_on:
+      - db
+    networks:
+      default:
+        aliases:
+          - pgadmin4
+          - pgadmin4.docker.com
