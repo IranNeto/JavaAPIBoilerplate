@@ -18,8 +18,8 @@ services:
         aliases:
           - java.api.boilerplate.docker.com
           - example-service
-#    depends_on:
-#      - sb-admin
+    depends_on:
+      - sb-admin
 
   sb-admin:
     build:

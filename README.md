@@ -14,7 +14,7 @@ _Feel free to discord or discuss about it_ :)
 ## General Specs
 
 - Gradle version 6.7
-- 3 modules: Client, Core, Service. Read more on 
+- 3 modules: Client, Core, Service. Read more below.
 - 1 SB2 Admin server to registre.
 - Spring Boot version 2.2.4 in service module
 - Java 11
@@ -33,24 +33,44 @@ This interface of communication and other components related to it are being hol
 
 ### Core module
 
-This module are going to be used to hold our domain classes and other core components that the application
+This module is going to be used to hold our domain classes and other core components that the application
 is going to use.
 
 ### Service module
 
-Service module contains all the domain and business logic routines as: Controllers, adapters, components
-, repositories, among others.
+Service module contains all domain and business logic routines 
+such as: Controllers, adapters, components, repositories, among others.
 
 
 ## Registry module (sb-admin)
 
-This module is a spring admin server application to registre other spring clients. *(Implementing)*
+This module is a spring admin server application to registre other spring clients.
+
+# Docker
+
+Docker already is setup to run the project. Just follow the steps below.
+
+1 - Build the jar from gradle. The project is configured to build the sb-admin and
+ the example-service module.
+```shell script
+gw cb
+```
+2 - Build the images with docker-compose. The project is also configured to build
+both images with this command. Look at docker-compose file and the Dockerfiles inside
+docker folder in each module to more information.
+```shell script
+docker-compose build
+```
+3 - Bring up the example-service. With it will come together the register service (sb-admin)
+```shell script
+docker-compose up example-service
+```
 
 ## Changes coming soon
 
 - Endpoints
 - Database connection
-- Docker setup
+- ~~Docker setup~~
 - Unit testing
 - Integration testing
 - Security
