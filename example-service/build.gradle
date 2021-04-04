@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.4.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id "org.liquibase.gradle" version "2.0.4"
 	id 'java'
 }
 
@@ -20,18 +21,12 @@ repositories {
 
 dependencies {
 	compileOnly 'org.projectlombok:lombok'
-
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.4.4'
-
-	// https://mvnrepository.com/artifact/org.liquibase/liquibase-core
-	implementation group: 'org.liquibase', name: 'liquibase-core', version: '4.3.2'
-
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	runtimeOnly 'com.h2database:h2'
-
 	runtimeOnly('javax.xml.bind:jaxb-api:2.4.0-b180830.0359')
 
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.4.4'
+	implementation 'org.liquibase:liquibase-core'//, version: '4.3.2'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation('org.postgresql:postgresql')
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'

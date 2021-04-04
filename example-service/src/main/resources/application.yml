@@ -20,16 +20,26 @@ spring:
     name: example-service
   liquibase:
     change-log: classpath:liquibase/changelog-master.xml
-
-  logging:
-    level:
-      liquibase: INFO
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:test;
-    username: sa
-    password: sa
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: freedev
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
 
   h2:
     console:
       enabled: true
+      settings:
+        web-allow-others: true

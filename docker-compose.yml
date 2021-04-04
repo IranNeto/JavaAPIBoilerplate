@@ -42,7 +42,7 @@ services:
     environment:
       POSTGRES_PASSWORD: "freedev"
     ports:
-      - "15432:5432"
+      - "5432:5432"
     volumes:
       - .mount/db:/var/lib/postgresql/data
     networks:
