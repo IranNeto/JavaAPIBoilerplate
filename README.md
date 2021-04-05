@@ -39,7 +39,7 @@ in a microservice architecture.
 >> Separating in modules allow the dev to publish artifacts that contains only the client interface, 
 >> core domain or the service. It can be beneficial with DDD architectures where the separation and reuse
 >> of concerns can allow a more cohesive microservice structure. 
->
+
 ### Client module 
 
 Client module concern interfaces and configuration to communicate with other services
@@ -56,11 +56,13 @@ is going to use.
 ### Service module
 
 Service module contains all domain and business logic routines 
-such as: Controllers, adapters, components, repositories, among others.
+such as: Controllers, adapters, components, repositories, among others. It uses the port 8080 but is also open to debugger or 
+socket connections in 8083.
 
 ## Registry module (sb-admin)
 
-This module is a spring admin server application to registre other spring clients.
+This module is a spring admin server application to registre other spring clients. It uses the port 8080 but is also open to debugger or 
+socket connections in 9993
 
 # Docker
 
