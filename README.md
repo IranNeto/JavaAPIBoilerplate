@@ -68,13 +68,13 @@ Docker is already setup to run the project. Just follow the steps below.
 
 1 - Bring up the database container in order to be updated with liquibase changesets
 ```shell script
-dc up -d db
+docker-compose up -d db
 ```
 
 2 - Build the jar from gradle. The project has configs to build the sb-admin and
 the example-service module.
 ```shell script
-gw cb
+gradle clean build
 ```
 3 - Build the images with docker-compose. The project has also configurations to build
 both images with this command. Look at docker-compose file and the Dockerfiles inside
