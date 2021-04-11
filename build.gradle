@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    //logging compile 'org.slf4j:slf4j-simple:1.7.7'
 }
 
 // This task compiles the service project before doing the docker build.
