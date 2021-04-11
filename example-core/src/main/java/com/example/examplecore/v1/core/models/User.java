@@ -2,23 +2,28 @@ package com.example.examplecore.v1.core.models;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity
 @Data
-@Builder
-@NoArgsConstructor
-public class User {
+@Table(name="user")
+@Entity
+public class User implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
 
-    private String firstName;
+    @Column(name = "firstname")
+    @Length(max = 50)
+    public String firstName;
 
-    private String lastName;
+    @Column(name = "lastname")
+    @Length(max = 50)
+    public String lastName;
 
-    @Column(length = 2)
-    private String state;
+    @Column(name = "state", length = 2)
+    public String state;
 }

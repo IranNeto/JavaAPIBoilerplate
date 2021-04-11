@@ -6,11 +6,14 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.*;
 
+import static com.example.examplecore.v1.resource.UserResource.USER_URI;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-@Path("/api/v1/user/")
-@RequestMapping("/api/v1/user/")
+@Path(USER_URI)
+@RequestMapping(USER_URI)
 public interface UserResource {
+
+    final String USER_URI = "/api/v1/user/";
 
     @GET
     @GetMapping("/")
@@ -20,7 +23,7 @@ public interface UserResource {
     @GET
     @GetMapping("/{id}")
     @Produces(APPLICATION_JSON)
-    ResponseEntity<Object> getUserById(@PathVariable String id);
+    ResponseEntity<Object> getUserById(@PathVariable Long id);
 
     @POST
     @PostMapping("/")
@@ -34,5 +37,5 @@ public interface UserResource {
 
     @DELETE
     @DeleteMapping("/{id}")
-    ResponseEntity<Object> deleteUser(@PathVariable String id);
+    ResponseEntity<Object> deleteUser(@PathVariable Long id);
 }
