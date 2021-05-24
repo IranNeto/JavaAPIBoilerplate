@@ -1,7 +1,6 @@
 package com.example.exampleservice.response;
 
 import com.example.examplecore.v1.core.models.User;
-import lombok.Getter;
 
 import java.util.Date;
 import java.util.List;
@@ -38,5 +37,9 @@ public class UserResponse {
 
     public User getUser() {
         return user;
+    }
+
+    public List<User> getUsers() {
+        return users;
     }
 }

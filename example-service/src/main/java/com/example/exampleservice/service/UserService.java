@@ -30,7 +30,7 @@ public class UserService {
     public UserResponse getAllUser(){
         try {
             List<User> users = this.userRepository.findAll();
-            return UserResponse.builder().build();
+            return UserResponse.builder().users(users).build();
         } catch (Exception e){
             throw new UserException("There were a failure when trying to get all users: " + e.getMessage());
         }
@@ -54,6 +54,10 @@ public class UserService {
     }
 
     public void deleteUser(Long id){
-        this.userRepository.deleteById(id);
+        try {
+            this.userRepository.deleteById(id);
+        } catch (Exception e){
+            throw new UserException("There were a failure when trying to delete the user: " + e.getMessage());
+        }
     }
 }

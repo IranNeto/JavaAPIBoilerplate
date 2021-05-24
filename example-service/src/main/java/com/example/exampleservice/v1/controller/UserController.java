@@ -12,7 +12,7 @@ import java.net.URI;
 
 @RestController
 public class UserController implements UserResource {
-
+//TODO: improve get rid with UserResponse
     UserService userService;
 
     public UserController(@Autowired UserService userService) {
@@ -55,7 +55,8 @@ public class UserController implements UserResource {
     @Override
     public ResponseEntity<Object> updateUser(User user) {
         try {
-            return ResponseEntity.noContent().build();
+            this.userService.updateUser(user);
+            return ResponseEntity.accepted().build();
         } catch (Exception e) {
             throw e;
         }
@@ -64,6 +65,7 @@ public class UserController implements UserResource {
     @Override
     public ResponseEntity<Object> deleteUser(Long id) {
         try {
+            this.userService.deleteUser(id);
             return ResponseEntity.noContent().build();
         } catch (Exception e) {
             throw e;

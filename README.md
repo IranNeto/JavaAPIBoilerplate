@@ -114,7 +114,7 @@ Password: freedev
 
 ## Changes coming soon
 
-- Endpoints
+- ~~Endpoints~~
 - ~~Database connection~~
 - ~~Docker setup~~
 - Unit testing
