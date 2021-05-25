@@ -1,5 +1,7 @@
 # Java API Boilerplate
 
+✅
+
 This project ~~as the name suggest~~ is a java API boilerplate built with some good practices that I find good to use.
 
 _Feel free to discord or discuss about it_ :)
@@ -109,11 +111,11 @@ Maintanance database: postgres
 Username: postgres
 Password: freedev
 ```
+3 - Save and you should be connected to it
+
 ## Documentation
 
 `swagger.yml` is provided with the api documentation
-
-3 - Save and you should be connected to it
 
 ## Changes coming soon
 
