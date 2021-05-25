@@ -12,7 +12,7 @@ import java.net.URI;
 
 @RestController
 public class UserController implements UserResource {
-//TODO: improve get rid with UserResponse
+
     UserService userService;
 
     public UserController(@Autowired UserService userService) {
