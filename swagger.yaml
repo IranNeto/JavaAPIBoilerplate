@@ -1,0 +1,145 @@
+swagger: '2.0'
+info:
+  description:
+    Java API Boilerplate
+    
+    [Github project](https://github.com/IranNeto/JavaAPIBoilerplate)
+  version: 1.0.0
+  title: Java API Boilerplate
+basePath: /api/v1/
+schemes:
+  - http
+
+paths:
+  /user/:
+    post:
+      tags:
+        - user
+      summary: Persist a user
+      description: Persist a user
+      operationId: createUser
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Persist a user
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: SUCCESS - Return the user model with id
+          schema:
+            $ref: '#/definitions/UserPersisted'
+        '400':
+          description: BAD REQUEST
+    get:
+      tags:
+        - user
+      summary: Get all users
+      description: Get all users
+      operationId: get all users
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: SUCCESS - Return all the users
+          schema:
+            items:
+              $ref: '#/definitions/UserPersisted'
+        '500':
+          description: INTERNAL ERROR - Something went wrong
+  /user/{id}:
+    put:
+      tags:
+        - user
+      summary: Update the user with id passed on url
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: integer
+          
+        - in: body
+          name: body
+          description: Update a user
+          required: true
+          schema:
+              $ref: '#/definitions/UserPersisted'
+      responses:
+        '200':
+          description: SUCCESS - Return the user model updated
+          schema:
+            $ref: '#/definitions/UserPersisted'
+        '400':
+          description: BAD REQUEST
+    get:
+      tags:
+        - user
+      summary: Find a user
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: integer
+
+      responses:
+        '200':
+          description: SUCCESS - Return the user model updated
+          schema:
+            $ref: '#/definitions/UserPersisted'
+        '500':
+          description: INTERNAL ERROR - Something went wrong
+    delete:
+      tags:
+        - user
+      summary: Delete the user with id passed on url
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          description: User id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: SUCCESS
+        '400':
+          description: BAD REQUEST - User does not exists
+  
+definitions:
+  User:
+    type: object
+    properties:
+      firstname:
+        type: string
+        example: First name 
+      lastname:
+        type: string
+        example: Last name 
+      state:
+        type: string
+        example: PE
+  UserPersisted:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 1
+      firstname:
+        type: string
+        example: First name 
+      lastname:
+        type: string
+        example: Last name 
+      state:
+        type: string
+        example: PE

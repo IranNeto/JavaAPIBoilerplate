@@ -5,7 +5,6 @@ import com.example.examplecore.v1.core.models.User;
 import java.util.Date;
 import java.util.List;
 
-//TODO Bug: Lombok doesn't work properly
 public class UserResponse {
     private User user;
     private List<User> users;

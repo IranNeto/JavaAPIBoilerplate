@@ -109,6 +109,9 @@ Maintanance database: postgres
 Username: postgres
 Password: freedev
 ```
+## Documentation
+
+`swagger.yml` is provided with the api documentation
 
 3 - Save and you should be connected to it
 
@@ -117,8 +120,4 @@ Password: freedev
 - ~~Endpoints~~
 - ~~Database connection~~
 - ~~Docker setup~~
-- Unit testing
-- Integration testing
-- Security
-- Cloud configuration
-- Documentation
+- ~~Documentation~~
